@@ -9,7 +9,7 @@
 *   **深度學習與 AI 應用：** 熟練應用 CNN、RNN (GRU/LSTM)、U-Net 等架構於語音降噪 (SECNN/SENN)、關鍵字喚醒 (KWS) 及人體/人臉偵測與姿態估計。具備神經架構搜尋 (NAS)、模型輕量化設計、定點化 (NNoM)、分散式訓練 (Distributed Training)、知識蒸餾 (Knowledge Distillation) 及少樣本學習 (Few-Shot Learning) 經驗。
 *   **模型推論與平台部署：** 熟悉 ONNX 生態系，並具備針對 Edge 端推論框架的優化與測試經驗。
 *   **軟體工程與系統平台：** 精通 C、Assembly、Python，具備導入 **Agentic Coding (GitHub Copilot)** 加速演算法開發與程式碼優化之豐富經驗。熟悉多種嵌入式平台，包含 SNC 系列晶片 (SNC7312, SNC32F10, SNC86000, SNC7320, SNC7330, SNC7648)、ARM Cortex-M 架構。
-*   **語音與音訊處理：** 聲音事件檢測 (AAD)、關鍵字喚醒 (KWS)、聲學迴聲消除 (AEC)、雜訊抑制 (SENN/NR)、波束成形 (Beamforming)、盲訊號分離 (BSS) 及空間殘響消除 (Dereverberation/WPE) 等。具備 MP3、Audio32plus、HQDPCM、AAC 等 Audio Codec 多平台移植與優化經驗。
+*   **語音與音訊處理：** 聲音事件檢測 (AAD)、關鍵字喚醒 (KWS)、聲學迴聲消除 (AEC)、雜訊抑制 (SENN/NR)、波束成形 (Beamforming)、盲訊號分離 (BSS) 及空間殘響消除 (Dereverberation/WPE) 等。具備 MP3, AAC, DPCM-Based Codec, G.722.1-Based Codec 等 Audio Codec 多平台移植與優化經驗。
 
 ---
 
