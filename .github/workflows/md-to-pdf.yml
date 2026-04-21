@@ -45,4 +45,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add Resume.pdf
           git commit -m "chore: auto-generate Resume.pdf from Resume.md [skip ci]"
-          git push origin "HEAD:${GITHUB_REF#refs/heads/}"
+          git push origin main
