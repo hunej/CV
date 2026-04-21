@@ -17,8 +17,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Install dependencies
         run: |
@@ -34,7 +32,14 @@ jobs:
             -V fontsize=11pt
 
       - name: Commit generated Resume.pdf
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore: auto-generate Resume.pdf from Resume.md"
-          file_pattern: Resume.pdf
+        run: |
+          if [ -z "$(git status --porcelain -- Resume.pdf)" ]; then
+            echo "No Resume.pdf changes to commit"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Resume.pdf
+          git commit -m "chore: auto-generate Resume.pdf from Resume.md"
+          git push origin "HEAD:${GITHUB_REF#refs/heads/}"
