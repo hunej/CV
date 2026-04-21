@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Install dependencies
         run: |
@@ -41,5 +43,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add Resume.pdf
-          git commit -m "chore: auto-generate Resume.pdf from Resume.md"
+          git commit -m "chore: auto-generate Resume.pdf from Resume.md [skip ci]"
           git push origin "HEAD:${GITHUB_REF#refs/heads/}"
