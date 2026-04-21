@@ -1,0 +1,40 @@
+name: Convert Resume Markdown to PDF
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - Resume.md
+
+permissions:
+  contents: write
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-lang-chinese fonts-noto-cjk
+
+      - name: Convert Resume.md to Resume.pdf
+        run: |
+          pandoc Resume.md -o Resume.pdf \
+            --pdf-engine=xelatex \
+            -V CJKmainfont="Noto Sans CJK TC" \
+            -V geometry:margin=1in \
+            -V fontsize=11pt
+
+      - name: Commit generated Resume.pdf
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: auto-generate Resume.pdf from Resume.md"
+          file_pattern: Resume.pdf
